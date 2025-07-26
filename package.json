@@ -2,6 +2,7 @@
   "name": "entity-bottom-sheet",
   "version": "1.0.0",
   "main": "index.js",
+  "types": "entity-bottom-sheet.d.ts",
   "description": "A reusable bottom sheet for Expo/React Native apps",
   "keywords": ["react-native", "bottom-sheet", "expo", "modal"],
   "author": "bazil-suhail",
