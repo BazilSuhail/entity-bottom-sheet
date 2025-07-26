@@ -1,6 +1,6 @@
 {
   "name": "entity-bottom-sheet",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "index.js",
   "types": "entity-bottom-sheet.d.ts",
   "description": "A reusable bottom sheet for Expo/React Native apps",
