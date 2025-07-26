@@ -5,7 +5,6 @@ import {
     Modal,
     PanResponder,
     Pressable,
-    StatusBar,
     StyleSheet,
     Text,
     View
@@ -18,7 +17,8 @@ export default function BottomSheet({
     onClose,
     heightRatio = 0.5,
     children,
-    title = "Custom Bottom Sheet"
+    title = "Custom Bottom Sheet",
+    header = null
 }) {
     const BOTTOM_SHEET_HEIGHT = screenHeight * heightRatio;
     const translateY = useRef(new Animated.Value(BOTTOM_SHEET_HEIGHT)).current;
@@ -83,9 +83,6 @@ export default function BottomSheet({
             animationType="none"
             onRequestClose={onClose}
         >
-            {visible &&
-                <StatusBar backgroundColor="#00000080" barStyle="dark-content" />
-            }
             <View style={styles.modalContainer}>
                 {/* Backdrop */}
                 <Pressable
@@ -104,7 +101,7 @@ export default function BottomSheet({
                     ]}
                 >
                     {/* Draggable Header Area */}
-                    <View
+                    <View 
                         style={styles.draggableArea}
                         {...panResponder.panHandlers}
                     >
@@ -113,10 +110,16 @@ export default function BottomSheet({
                             <View style={styles.dragHandle} />
                         </View>
 
-                        {/* Header */}
-                        <View style={styles.header}>
-                            <Text style={styles.title}>{title}</Text>
-                        </View>
+                        {/* Header - Custom or Default */}
+                        {header ? (
+                            <View style={styles.customHeaderContainer}>
+                                {header}
+                            </View>
+                        ) : (
+                            <View style={styles.header}>
+                                <Text style={styles.title}>{title}</Text>
+                            </View>
+                        )}
                     </View>
 
                     {/* Non-draggable Content Area */}
@@ -179,7 +182,6 @@ const styles = StyleSheet.create({
         fontWeight: '600',
     },
     contentContainer: {
-        flex: 1,
-        padding: 16,
+        flex: 1, 
     },
 });
