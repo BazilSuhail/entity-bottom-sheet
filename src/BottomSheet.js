@@ -5,6 +5,7 @@ import {
     Modal,
     PanResponder,
     Pressable,
+    StatusBar,
     StyleSheet,
     Text,
     View
@@ -80,10 +81,13 @@ export default function BottomSheet({
         <Modal
             visible={visible}
             transparent={true}
-            animationType="none"
+            animationType="fade"
             onRequestClose={onClose}
         >
             <View style={styles.modalContainer}>
+                 {visible &&
+                 <StatusBar backgroundColor="#00000066" barStyle="dark-content" />
+             }
                 {/* Backdrop */}
                 <Pressable
                     style={styles.backdrop}
@@ -143,7 +147,7 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: 'rgba(0,0,0,0.5)',
+        backgroundColor: '#00000066',
     },
     bottomSheetContainer: {
         backgroundColor: 'white',
