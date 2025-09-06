@@ -1,10 +1,18 @@
 {
   "name": "entity-bottom-sheet",
-  "version": "1.2.1",
+  "version": "1.3.2",
   "main": "index.js",
   "types": "entity-bottom-sheet.d.ts",
   "description": "A reusable bottom sheet for Expo/React Native apps",
-  "keywords": ["react-native", "bottom-sheet", "entity-bottom-sheet", "entity-bottom-modal","entity-sheet","expo-entity-modal","react-native-bottom-sheet"],
+  "keywords": [
+    "react-native",
+    "bottom-sheet",
+    "entity-bottom-sheet",
+    "entity-bottom-modal",
+    "entity-sheet",
+    "expo-entity-modal",
+    "react-native-bottom-sheet"
+  ],
   "author": "bazil-suhail",
   "license": "MIT",
   "peerDependencies": {
@@ -17,7 +25,7 @@
     "expo": "^50.0.0"
   },
   "repository": {
-  "type": "git",
-  "url": "https://github.com/BazilSuhail/entity-bottom-sheet"
-}
+    "type": "git",
+    "url": "https://github.com/BazilSuhail/entity-bottom-sheet"
+  }
 }
