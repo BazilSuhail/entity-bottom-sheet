@@ -20,8 +20,10 @@ export default function BottomSheet({
     children,
     title = "Custom Bottom Sheet",
     header = null,
-    draggableAreaColor = 'white',   // New prop
-    dragHandleColor = '#ccc'        // New prop
+    draggableAreaColor = 'white',
+    dragHandleColor = '#ccc',
+    statusBarColor = '#00000066',
+    statusBarStyle = 'dark-content'
 }) {
     const BOTTOM_SHEET_HEIGHT = screenHeight * heightRatio;
     const translateY = useRef(new Animated.Value(BOTTOM_SHEET_HEIGHT)).current;
@@ -87,9 +89,12 @@ export default function BottomSheet({
             onRequestClose={onClose}
         >
             <View style={styles.modalContainer}>
-                {visible &&
-                 <StatusBar backgroundColor="#00000066" barStyle="dark-content" />
-             }
+                {visible && (
+                    <StatusBar 
+                        backgroundColor={statusBarColor} 
+                        barStyle={statusBarStyle}
+                    />
+                )}
                 {/* Backdrop */}
                 <Pressable
                     style={styles.backdrop}
